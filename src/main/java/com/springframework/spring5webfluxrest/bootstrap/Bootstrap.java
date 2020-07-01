@@ -23,10 +23,10 @@ public class Bootstrap implements CommandLineRunner {
         if(categoryRepository.count().block()==0){
             loadCategories();
             loadVendors();
-            System.out.println("Recipe data loaded into MongoDb...");
+            System.out.println("Data loaded into MongoDb...");
 
         }else{
-            System.out.println("Recipe data was already in MongoDB...");
+            System.out.println("Data was already in MongoDB...");
         }
         System.out.println("Vendors count: "+vendorRepository.count().block());
         System.out.println("Categories count: "+categoryRepository.count().block());
