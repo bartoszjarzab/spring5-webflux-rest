@@ -1,6 +1,5 @@
 package com.springframework.spring5webfluxrest.controllers;
 
-import com.springframework.spring5webfluxrest.domain.Category;
 import com.springframework.spring5webfluxrest.domain.Vendor;
 import com.springframework.spring5webfluxrest.repositories.VendorRepository;
 import org.junit.jupiter.api.BeforeEach;
@@ -11,7 +10,6 @@ import org.springframework.test.web.reactive.server.WebTestClient;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
-import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.anyString;
 
 class VendorControllerTest {
