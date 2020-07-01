@@ -44,7 +44,7 @@ public class CategoryController {
     @PatchMapping(BASE_URL+"/{id}")
     Mono<Category> patch(@PathVariable String id, @RequestBody Category category){
         Category foundCategory = categoryRepository.findById(id).block();
-        if(!foundCategory.getDescription().equals(category.getDescription())){
+        if(!foundCategory.getDescription().equals(category.getDescription())){ //this logic should actually be in a service layer
             foundCategory.setDescription(category.getDescription());
             return categoryRepository.save(foundCategory);
         }

@@ -44,11 +44,11 @@ public class VendorController {
     @PatchMapping(BASE_URL+"/{id}")
     Mono<Vendor> patch(@PathVariable String id, @RequestBody Vendor vendor){
         Vendor foundVendor = vendorRepository.findById(id).block();
-        if(!foundVendor.getFirstName().equals(vendor.getFirstName())){
+        if(!foundVendor.getFirstName().equals(vendor.getFirstName())){ //this logic should actually be in a service layer
             foundVendor.setFirstName(vendor.getFirstName());
             vendorRepository.save(foundVendor);
         }
-        if(!foundVendor.getLastName().equals(vendor.getLastName())){
+        if(!foundVendor.getLastName().equals(vendor.getLastName())){ //this logic should actually be in a service layer
             foundVendor.setLastName(vendor.getLastName());
             vendorRepository.save(foundVendor);
         }
